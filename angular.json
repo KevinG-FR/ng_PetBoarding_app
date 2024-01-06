@@ -87,10 +87,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ng-PetBoarding-app:build:production"
+              "buildTarget": "ng-PetBoarding-app:build:production"
             },
             "development": {
-              "browserTarget": "ng-PetBoarding-app:build:development"
+              "buildTarget": "ng-PetBoarding-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,10 +98,13 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-PetBoarding-app:build"
+            "buildTarget": "ng-PetBoarding-app:build"
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "dd6e6238-48ac-43e6-92ec-e85cb37113cc"
   }
 }
