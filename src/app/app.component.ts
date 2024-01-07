@@ -28,5 +28,5 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
-  title = 'ng-PetBoarding-app';
+  title = 'ng_PetBoarding_app';
 }
