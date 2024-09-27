@@ -102,11 +102,23 @@
           "options": {
             "buildTarget": "ng_PetBoarding_app:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "dd6e6238-48ac-43e6-92ec-e85cb37113cc"
+    "analytics": "dd6e6238-48ac-43e6-92ec-e85cb37113cc",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { BENEFITS } from  './Benefit/mock-benefits'
-import { Benefit } from './Benefit/benefit';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: 'app.component.html',
+  styleUrl: './app.component.css'
 })
 
-export class AppComponent implements OnInit {  
-  title = 'ng-PetBoarding-app 99';
-  benefits : Benefit[] = BENEFITS;
+export class AppComponent implements OnInit{  
+  http = inject(HttpClient);
+  title = 'ng-PetBoarding-app';
+  data: any;
 
-  ngOnInit(){
-    console.table(this.benefits);
-    this.getMessage(this.benefits[1]);
-  }
-
-  getMessage (benefit: Benefit) : void{
-    console.log(`Vous avez choisi la prestation suivante : ${benefit.label} qui coûte ${benefit.cost}`);
+  ngOnInit(): void {
+    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe({
+      next: response => this.data = response,
+      error: error => console.log(error),
+      complete: () => console.log('Request has completed')
+    })
   }
 }
