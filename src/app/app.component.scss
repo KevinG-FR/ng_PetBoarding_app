@@ -1,0 +1,9 @@
+@use "./../assets/scss/bootstrap-variables" as *;
+
+.height-main-row {
+  height: $main-row-height;
+}
+
+.full-height-main-content {
+  height: $main-content-height;
+}
